@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Product Factory - AI-Powered App Generation</title>
+    <meta name="description" content="From idea to deployed app in <6 hours. Fully automated. Zero coding required.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        
+        .nav-links a {
+            margin-left: 30px;
+            color: #6b7280;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #1f2937;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 48px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .secondary-button {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 18px 48px;
+            border: 2px solid white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            margin-left: 16px;
+            transition: background 0.2s;
+        }
+        
+        .secondary-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Stats */
+        .stats {
+            background: #1f2937;
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        /* Features */
+        .features {
+            padding: 120px 0;
+            background: #f9fafb;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 60px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #1f2937;
+        }
+        
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 120px 0;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .step p {
+            color: #6b7280;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 120px 0;
+            background: #f9fafb;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 48px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .pricing-card.featured {
+            border: 3px solid #667eea;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .plan-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .plan-price {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #667eea;
+        }
+        
+        .plan-period {
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+        
+        .plan-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .plan-features li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .features-grid,
+            .steps,
+            .pricing-grid,
+            .stats-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .secondary-button {
+                display: block;
+                margin: 16px auto 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">🏭 Autonomous Factory</div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="https://github.com/ismaelloveexcel/autonomous-product-factory">GitHub</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>AI-Powered Apps,<br>Built Automatically</h1>
+            <p>From idea to deployed app in less than 6 hours. Fully automated. Zero coding required.</p>
+            <a href="#" class="cta-button">Try Demo</a>
+            <a href="#how-it-works" class="secondary-button">See How It Works</a>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">127</div>
+                    <div class="stat-label">Apps Generated</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Live & Running</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number"><6</div>
+                    <div class="stat-label">Hours to Deploy</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Automated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Powered by 7 AI Agents</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Market Research</h3>
+                    <p>AI discovers trending app ideas by analyzing social media, Reddit, and search trends in real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Safety Validation</h3>
+                    <p>Multi-layer COPPA/GDPR compliance checks ensure apps are safe and age-appropriate for kids.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Code Generation</h3>
+                    <p>Reuses proven GitHub code + GPT-4 to build React apps with beautiful, minimal UIs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Aesthetic Gatekeeper</h3>
+                    <p>Strict UI/UX review (≥70/100 required). No generic dashboards. No template designs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📣</div>
+                    <h3>Marketing Automation</h3>
+                    <p>AI generates taglines, descriptions, social posts, and launch strategies automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Auto-Deployment</h3>
+                    <p>Deploys to Vercel with one click. Apps go live with global CDN instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Performance Monitoring</h3>
+                    <p>Tracks DAU, engagement, and revenue. Auto-kills underperforming apps to save costs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔮</div>
+                    <h3>Predictive Scoring</h3>
+                    <p>Predicts app success before building. Prevents wasting resources on doomed ideas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Auto-Healing</h3>
+                    <p>Detects bugs in live apps, generates fixes, and redeploys automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>AI Researches</h3>
+                    <p>Market Research agent scans trends and generates app ideas</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Safety Checks</h3>
+                    <p>Viability agent validates COPPA compliance and feasibility</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Code Built</h3>
+                    <p>Development agent builds React app with beautiful UI</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Auto-Deploy</h3>
+                    <p>Launch agent deploys to Vercel and monitors performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-price">$29</div>
+                    <div class="plan-period">per month</div>
+                    <ul class="plan-features">
+                        <li>5 apps/month</li>
+                        <li>Basic monitoring</li>
+                        <li>Community support</li>
+                        <li>Vercel deployment</li>
+                    </ul>
+                    <a href="#" class="cta-button">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="plan-name">Pro</div>
+                    <div class="plan-price">$99</div>
+                    <div class="plan-period">per month</div>
+                    <ul class="plan-features">
+                        <li>20 apps/month</li>
+                        <li>Advanced analytics</li>
+                        <li>Priority support</li>
+                        <li>A/B testing</li>
+                        <li>Auto-healing</li>
+                        <li>Custom domains</li>
+                    </ul>
+                    <a href="#" class="cta-button">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">Custom</div>
+                    <div class="plan-period">contact us</div>
+                    <ul class="plan-features">
+                        <li>Unlimited apps</li>
+                        <li>White-label option</li>
+                        <li>Dedicated support</li>
+                        <li>Custom agents</li>
+                        <li>SLA guarantee</li>
+                        <li>Private deployment</li>
+                    </ul>
+                    <a href="#" class="cta-button">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Build Apps on Autopilot?</h2>
+            <p>Join hundreds of developers shipping faster with AI agents</p>
+            <a href="#" class="cta-button">Start Free Trial</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#">Demo</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/ismaelloveexcel/autonomous-product-factory">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">GDPR</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Autonomous Product Factory. Built with ❤️ by AI agents.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

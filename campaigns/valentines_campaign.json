@@ -1,0 +1,188 @@
+{
+  "campaign_name": "Skip the Flowers, Send a Game",
+  "date_range": {
+    "start": "2026-02-01",
+    "end": "2026-02-14"
+  },
+  "products": {
+    "playgift": {
+      "templates": [
+        {
+          "id": "love_runner",
+          "name": "Love Runner",
+          "description": "Collect hearts, dodge obstacles, reach your love",
+          "duration_seconds": 60,
+          "price_aed": 15,
+          "personalization": [
+            "partner_name",
+            "inside_jokes",
+            "favorite_colors"
+          ],
+          "ending": "Romantic message reveal"
+        },
+        {
+          "id": "our_story",
+          "name": "Our Story",
+          "description": "Interactive visual novel of your relationship",
+          "duration_seconds": 180,
+          "price_aed": 20,
+          "personalization": [
+            "relationship_timeline",
+            "first_date_location",
+            "first_kiss_moment",
+            "memorable_events"
+          ],
+          "ending": "Choose-your-adventure happy ending"
+        },
+        {
+          "id": "memory_match",
+          "name": "Memory Match",
+          "description": "Match photos of you together",
+          "duration_seconds": 120,
+          "price_aed": 10,
+          "personalization": [
+            "6_photos_upload",
+            "partner_names",
+            "relationship_tagline"
+          ],
+          "ending": "Photo slideshow with music"
+        }
+      ],
+      "marketing_budget": 3700,
+      "expected_conversions": 2500,
+      "expected_revenue_usd": 12250
+    },
+    "autonomous_factory": {
+      "showcase": "PlayGift case study",
+      "message": "Built in 6 hours by AI",
+      "marketing_budget": 800,
+      "expected_signups": 650,
+      "expected_paid_users": 75,
+      "expected_revenue_usd": 5500
+    }
+  },
+  "channels": [
+    {
+      "name": "TikTok/Instagram",
+      "budget": 2000,
+      "target": "PlayGift",
+      "content_types": [
+        "POV: Your partner gave you THIS instead of flowers",
+        "Forget chocolates. Send THIS to your crush",
+        "My boyfriend made me a GAME for Valentine's Day"
+      ],
+      "expected_reach": 500000,
+      "expected_ctr": 0.005,
+      "expected_conversions": 1500
+    },
+    {
+      "name": "Google Ads",
+      "budget": 500,
+      "target": "PlayGift",
+      "keywords": [
+        "valentine's day gift for boyfriend",
+        "unique valentine's gifts",
+        "personalized valentine's gifts UAE"
+      ],
+      "expected_cpc": 1.50,
+      "expected_conversions": 250
+    },
+    {
+      "name": "Facebook/Instagram Ads",
+      "budget": 1000,
+      "target": "PlayGift",
+      "targeting": {
+        "location": "UAE",
+        "age": "18-35",
+        "relationship_status": ["in a relationship", "engaged"]
+      },
+      "expected_cpa": 4.00,
+      "expected_conversions": 250
+    },
+    {
+      "name": "Reddit",
+      "budget": 0,
+      "target": "PlayGift",
+      "subreddits": [
+        "r/dubai",
+        "r/dating_advice",
+        "r/relationship_advice",
+        "r/gifts",
+        "r/AskMen",
+        "r/AskWomen"
+      ],
+      "strategy": "Authentic storytelling, not promotional",
+      "expected_conversions": 500
+    },
+    {
+      "name": "Twitter/X",
+      "budget": 300,
+      "target": "Autonomous Factory",
+      "strategy": "Built in public narrative",
+      "tweet_frequency": "3 per day",
+      "expected_impressions": 100000,
+      "expected_signups": 100
+    },
+    {
+      "name": "LinkedIn",
+      "budget": 500,
+      "target": "Autonomous Factory",
+      "targeting": "Agencies, entrepreneurs, CTOs",
+      "content": "PlayGift case study video",
+      "expected_impressions": 50000,
+      "expected_leads": 150
+    },
+    {
+      "name": "Email",
+      "budget": 200,
+      "target": "PlayGift",
+      "sequence": [
+        {
+          "day": -10,
+          "subject": "Your Valentine's Day gift is inside 🎁",
+          "type": "Pre-announcement"
+        },
+        {
+          "day": 1,
+          "subject": "Forget flowers. Send THIS instead ❤️",
+          "type": "Launch"
+        },
+        {
+          "day": 7,
+          "subject": "Real couples, real reactions 🥹",
+          "type": "Social proof"
+        },
+        {
+          "day": 12,
+          "subject": "48 hours left for Valentine's! ⏰",
+          "type": "Urgency"
+        }
+      ],
+      "expected_open_rate": 0.35,
+      "expected_conversions": 300
+    }
+  ],
+  "cross_promotion": {
+    "playgift_to_factory": {
+      "cta": "Built by Autonomous Product Factory",
+      "placement": "Footer of every game",
+      "expected_ctr": 0.10
+    },
+    "factory_to_playgift": {
+      "cta": "See what our AI built: PlayGift",
+      "placement": "Landing page showcase section",
+      "expected_ctr": 0.15
+    }
+  },
+  "success_metrics": {
+    "playgift_games_created": 2500,
+    "playgift_revenue_usd": 12250,
+    "playgift_share_rate": 0.60,
+    "factory_signups": 650,
+    "factory_paid_users": 75,
+    "factory_mrr": 5500,
+    "total_budget": 4500,
+    "total_revenue": 17750,
+    "roi": 2.94
+  }
+}

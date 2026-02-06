@@ -1,0 +1,231 @@
+{
+  "campaign_name": "Share the Joy of Giving",
+  "date_range": {
+    "start": "2026-03-01",
+    "end": "2026-03-30"
+  },
+  "cultural_notes": {
+    "importance": "Ramadan is about generosity, family, and community",
+    "sensitivities": [
+      "No food imagery during fasting hours (sunrise to sunset)",
+      "Emphasize charity and giving, not commercial",
+      "Review all content with UAE-based Muslims",
+      "Offer significant free content"
+    ],
+    "opportunities": [
+      "Iftar gatherings (breaking fast together)",
+      "Family time after Taraweeh prayers",
+      "Eid preparation and gift-giving",
+      "WhatsApp is primary communication tool"
+    ]
+  },
+  "products": {
+    "playgift": {
+      "templates": [
+        {
+          "id": "iftar_rush",
+          "name": "Iftar Rush",
+          "description": "Help family prepare iftar meal",
+          "duration_seconds": 90,
+          "price_aed": 0,
+          "pricing_note": "FREE - Ramadan gift to community",
+          "personalization": [
+            "family_member_names",
+            "favorite_iftar_foods"
+          ],
+          "ending": "Alhamdulillah! Iftar is ready",
+          "collectibles": ["dates", "water", "samosas", "traditional_foods"]
+        },
+        {
+          "id": "zakat_calculator_game",
+          "name": "Zakat Calculator Game",
+          "description": "Learn about zakat through mini-puzzles",
+          "duration_seconds": 300,
+          "price_aed": 0,
+          "pricing_note": "FREE - Educational resource",
+          "target_age": "8-16",
+          "learning_outcomes": [
+            "Understanding zakat percentage (2.5%)",
+            "Who receives zakat",
+            "How to calculate nisab"
+          ],
+          "ending": "Certificate of completion"
+        },
+        {
+          "id": "eid_countdown",
+          "name": "Eid Countdown",
+          "description": "Daily mini-game unlocks for 30 days",
+          "duration_seconds": "Daily 60-second games",
+          "price_aed": 10,
+          "personalization": [
+            "family_name",
+            "eid_wishes_custom_message"
+          ],
+          "mechanics": "30 days of Ramadan = 30 unique levels",
+          "ending": "Personalized Eid Mubarak video"
+        },
+        {
+          "id": "ramadan_memories",
+          "name": "Ramadan Memories",
+          "description": "Upload family photos, AI creates nostalgic journey",
+          "duration_seconds": 240,
+          "price_aed": 15,
+          "personalization": [
+            "10_family_photos",
+            "family_story_text",
+            "favorite_ramadan_traditions"
+          ],
+          "ending": "Shareable video montage",
+          "share_target": "Extended family WhatsApp groups"
+        }
+      ],
+      "marketing_budget": 2000,
+      "expected_conversions": 10000,
+      "expected_revenue_usd": 11000,
+      "free_games_ratio": 0.70
+    },
+    "autonomous_factory": {
+      "initiative": "Free for UAE Non-Profits",
+      "message": "Build apps that benefit your community",
+      "target_apps": [
+        "Educational apps for kids",
+        "Zakat calculators",
+        "Charity platforms",
+        "Volunteer management",
+        "Community directories"
+      ],
+      "marketing_budget": 1000,
+      "expected_signups": 1250,
+      "expected_nonprofit_projects": 40,
+      "expected_paid_users": 125,
+      "expected_revenue_usd": 9000
+    }
+  },
+  "channels": [
+    {
+      "name": "WhatsApp",
+      "budget": 0,
+      "target": "PlayGift",
+      "strategy": "Viral sharing via family/friend groups",
+      "mechanics": {
+        "share_message": "🌙 Ramadan Mubarak! I made you a special game 🎮✨ [link]",
+        "cta": "Create one for your family too",
+        "viral_coefficient_target": 1.5
+      },
+      "expected_conversions": 7000,
+      "note": "Primary channel in UAE/GCC"
+    },
+    {
+      "name": "Instagram",
+      "budget": 1000,
+      "target": "PlayGift",
+      "strategy": "Family-focused content + influencer partnerships",
+      "influencers": {
+        "count": 8,
+        "follower_range": "10k-100k",
+        "location": "UAE/GCC",
+        "type": "Family lifestyle",
+        "cost_per_post": 150
+      },
+      "hashtags": [
+        "#Ramadan2026",
+        "#RamadanKareem",
+        "#EidGifts",
+        "#FamilyTime",
+        "#RamadanActivities"
+      ],
+      "expected_impressions": 300000,
+      "expected_conversions": 2000
+    },
+    {
+      "name": "TikTok",
+      "budget": 800,
+      "target": "PlayGift",
+      "content_themes": [
+        "Things Muslims do in Ramadan",
+        "Surprising my mom with a Ramadan game (emotional)",
+        "POV: It's Ramadan and your family is competitive (comedy)"
+      ],
+      "expected_impressions": 400000,
+      "expected_conversions": 2000
+    },
+    {
+      "name": "Mosques & Community Centers",
+      "budget": 200,
+      "target": "PlayGift",
+      "strategy": "QR codes after Taraweeh prayers",
+      "message": "FREE Ramadan games for your family - scan here!",
+      "execution": {
+        "print_qr_codes": true,
+        "partner_mosques": 20,
+        "location": "Dubai, Abu Dhabi, Sharjah"
+      },
+      "expected_scans": 1500,
+      "expected_conversions": 1000
+    },
+    {
+      "name": "LinkedIn",
+      "budget": 300,
+      "target": "Autonomous Factory",
+      "message": "Build apps that give back this Ramadan",
+      "offer": "Free for UAE non-profits",
+      "expected_impressions": 30000,
+      "expected_applications": 75
+    },
+    {
+      "name": "Twitter/X",
+      "budget": 200,
+      "target": "Autonomous Factory",
+      "thread_strategy": [
+        "Announcing free app building for non-profits",
+        "Use cases: donation platforms, volunteer tools, educational apps",
+        "Turnaround: <6 hours from idea to deployed",
+        "Apply here: [link]"
+      ],
+      "expected_impressions": 50000,
+      "expected_applications": 150
+    },
+    {
+      "name": "Product Hunt",
+      "budget": 500,
+      "target": "Autonomous Factory",
+      "launch_date": "2026-03-15",
+      "launch_timing": "Mid-Ramadan for maximum visibility",
+      "title": "AI Agents That Build Apps While You Sleep - Free for Ramadan Projects",
+      "tagline": "7 AI agents build your app in <6 hours. This Ramadan, free for charitable projects.",
+      "expected_ranking": "Top 3 Product of the Day",
+      "expected_signups": 800
+    }
+  ],
+  "cross_promotion": {
+    "shared_narrative": "AI that creates joy and gives back",
+    "playgift_footer": "Built by Autonomous Product Factory - Build apps that give back",
+    "factory_showcase": "See what we built: PlayGift (12,000+ games created this Ramadan)",
+    "joint_initiative": "Every PlayGift game = $1 donated to charity (via Factory profits)"
+  },
+  "success_metrics": {
+    "playgift_games_created": 10000,
+    "playgift_games_free": 7000,
+    "playgift_games_paid": 3000,
+    "playgift_revenue_usd": 11000,
+    "playgift_share_rate": 0.70,
+    "playgift_viral_coefficient": 1.5,
+    "factory_signups": 1250,
+    "factory_nonprofit_projects": 40,
+    "factory_paid_users": 125,
+    "factory_mrr": 9000,
+    "total_budget": 3000,
+    "total_revenue": 20000,
+    "roi": 5.67
+  },
+  "charitable_component": {
+    "initiative": "$1 per game to charity",
+    "expected_donation": 10000,
+    "beneficiaries": [
+      "UAE Red Crescent",
+      "Dubai Charity Association",
+      "Local food banks"
+    ],
+    "transparency": "Donation receipts posted publicly"
+  }
+}

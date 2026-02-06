@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  dashboard:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - VERCEL_TOKEN=${VERCEL_TOKEN}
+      - DATABASE_URL=sqlite:///data/factory.db
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    command: streamlit run dashboard/app.py --server.address 0.0.0.0
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  scheduler:
+    build: .
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - VERCEL_TOKEN=${VERCEL_TOKEN}
+      - DATABASE_URL=sqlite:///data/factory.db
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    command: python orchestration/scheduler.py
+    depends_on:
+      - dashboard
+    restart: unless-stopped
+
+volumes:
+  data:
+  logs:
